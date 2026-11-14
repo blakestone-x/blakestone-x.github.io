@@ -70,7 +70,8 @@ h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -.025e
 
 .viewer { border: 1px solid var(--line-2); background: var(--surface-1); }
 .viewer .stage { display: block; position: relative; aspect-ratio: 1886 / 1156; background: var(--surface-0); overflow: hidden; }
-.viewer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 160ms ease; }
+.viewer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 160ms ease; }
+.viewer video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--surface-0); }
 .viewer img.on { opacity: 1; }
 .viewer .tabs { display: flex; border-top: 1px solid var(--line-2); overflow-x: auto; scrollbar-width: none; }
 .viewer .tabs::-webkit-scrollbar { display: none; }
@@ -135,40 +136,40 @@ footer .wrap { display: flex; justify-content: space-between; gap: var(--s3); pa
 
   <section id="work" aria-label="Work">
     <div class="index">
-      <a href="#spyglass"><span class="n">1</span><span class="t">Spyglass Terminal</span><span class="k">Operations instrument</span><span class="y">2026</span></a>
-      <div class="row"><span class="n">2</span><span class="t">Six Years of Service</span><span class="k">Motion, in preparation</span><span class="y">2026</span></div>
-      <div class="row"><span class="n">3</span><span class="t">Fieldcraft</span><span class="k">3D training lab, in preparation</span><span class="y">2026</span></div>
-      <div class="row"><span class="n">4</span><span class="t">Path</span><span class="k">Dispatch and field console, in preparation</span><span class="y">2026</span></div>
-      <div class="row"><span class="n">5</span><span class="t">Store models</span><span class="k">3D site surveys, in preparation</span><span class="y">2026</span></div>
+      <a href="#spyglass"><span class="n">1</span><span class="t">Spyglass</span><span class="k">Coverage and operations suite</span><span class="y">2026</span></a>
+      <a href="#six-years"><span class="n">2</span><span class="t">Six Years of Service</span><span class="k">Motion</span><span class="y">2026</span></a>
+      <a href="#fieldcraft"><span class="n">3</span><span class="t">Fieldcraft</span><span class="k">3D training lab</span><span class="y">2026</span></a>
+      <a href="#path"><span class="n">4</span><span class="t">Path</span><span class="k">Dispatch and field console</span><span class="y">2026</span></a>
+      <a href="#stores"><span class="n">5</span><span class="t">Store models</span><span class="k">3D site surveys</span><span class="y">2026</span></a>
     </div>
   </section>
 
   <article class="piece" id="spyglass">
     <header>
-      <h2>Spyglass Terminal</h2>
-      <span class="label">Operations instrument · 2026 · Interior Climate Solutions</span>
+      <h2>Spyglass</h2>
+      <span class="label">Coverage and operations suite · 2026 · Interior Climate Solutions</span>
     </header>
-    <p class="lede">One screen where sales, operations and leadership read a year of service calls against where our technicians can reach. It is the densest page in Spyglass, the coverage suite I started in August.</p>
+    <p class="lede">Four views of the same nightly data: a coverage map, an analyst's workbench, a briefing wall and a dependency reader. Each one opens on the region, window and selection you bring from the last.</p>
 
     <div class="viewer" data-viewer>
-      <a class="stage" href="assets/spyglass/flow.webp" target="_blank" rel="noopener" aria-label="Open this view at full size">
-        <img class="on" src="assets/spyglass/flow.webp" width="1886" height="1156" alt="Map of the United States with colored arcs fanning out from each service base to the customer sites it serves.">
+      <a class="stage" style="aspect-ratio: 16 / 10" href="assets/spyglass/home.webp" target="_blank" rel="noopener" aria-label="Open this view at full size">
+        <img class="on" src="assets/spyglass/home.webp" alt="The Spyglass home page: four panels named Cockpit, Terminal, Theater and Ontology, each with one large number and a line explaining it.">
       </a>
-      <div class="tabs" role="group" aria-label="Views of Spyglass Terminal">
-        <button type="button" aria-pressed="true" data-src="assets/spyglass/flow.webp"
-          data-alt="Map of the United States with colored arcs fanning out from each service base to the customer sites it serves."
-          data-cap="<b>Modeled flow.</b> Each arc runs from a base to a site with work in the window. Width is dispatches, color is the site's drive-time tier.">Modeled flow</button>
-        <button type="button" aria-pressed="false" data-src="assets/spyglass/actual.webp"
-          data-alt="The same map with arcs drawn from the branch of the technician who made each visit, many crossing several states."
-          data-cap="<b>Actual flow.</b> The same year, drawn from the branch of the technician who made each visit. The long arcs are trips the modeled view would not predict.">Actual flow</button>
-        <button type="button" aria-pressed="false" data-src="assets/spyglass/columns.webp"
-          data-alt="The map tilted into 3D, with hexagonal columns rising where the most work happens."
-          data-cap="<b>Columns.</b> Each column is a 25-mile hex. Height is dispatches in the window, color is the drive-time tier of most of that work.">Columns</button>
-        <button type="button" aria-pressed="false" data-src="assets/spyglass/southeast.webp"
-          data-alt="The map zoomed to the southeastern states, arcs converging on a handful of bases."
-          data-cap="<b>One region.</b> Pick the Southeast and every panel on the page re-reads to it: the map, the accounts, the inspector and the chart below.">One region</button>
+      <div class="tabs" role="group" aria-label="Views of Spyglass">
+        <button type="button" aria-pressed="true" data-src="assets/spyglass/home.webp"
+          data-alt="The Spyglass home page: four panels named Cockpit, Terminal, Theater and Ontology, each with one large number and a line explaining it."
+          data-cap="<b>Home.</b> Four views, each introduced by the one number it exists to explain, with what stands out this week underneath.">Home</button>
+        <button type="button" aria-pressed="false" data-src="assets/spyglass/grid.webp"
+          data-alt="A grid of small squares, brands across the top and branches down the side, brighter where a branch made more visits for a brand."
+          data-cap="<b>Grid.</b> Which brands depend on which branches. Each cell is the visits one branch made for one brand; brighter is more.">Grid</button>
+        <button type="button" aria-pressed="false" data-src="assets/spyglass/theater.webp"
+          data-alt="A 3D map of the United States as raised terrain, covered in colored columns where service work was completed."
+          data-cap="<b>Theater.</b> The briefing wall. Completed work stands up as columns, and the ground rises with drive time from the nearest base.">Theater</button>
+        <button type="button" aria-pressed="false" data-src="assets/spyglass/frame.webp"
+          data-alt="The Terminal page: an accounts table on the left, a map in the middle, an inspector on the right and a year of daily volume across the bottom."
+          data-cap="<b>Terminal.</b> The analyst's workbench: accounts, the map, an inspector and one chart at a time across the bottom. Here it is a year of daily volume by region.">Terminal</button>
       </div>
-      <p class="cap" aria-live="polite"><b>Modeled flow.</b> Each arc runs from a base to a site with work in the window. Width is dispatches, color is the site's drive-time tier.</p>
+      <p class="cap" aria-live="polite"><b>Home.</b> Four views, each introduced by the one number it exists to explain, with what stands out this week underneath.</p>
     </div>
 
     <div class="notes">
@@ -183,15 +184,224 @@ footer .wrap { display: flex; justify-content: space-between; gap: var(--s3); pa
       </div>
       <div>
         <h3 class="label">Why it exists</h3>
-        <p>A response-time promise depends on where the technicians are. The modeled view shows which base should serve each site. The actual view shows who drove there.</p>
-        <p>The page puts both on one map, so the difference between the plan and the year is something you can see.</p>
+        <p>A response-time promise depends on where the technicians are. Spyglass reads a year of service calls against the map of where they can reach.</p>
+        <p>Sales, operations and leadership each needed a different way in, so it became four views over one set of numbers that always agree.</p>
       </div>
       <div>
         <h3 class="label">How it was made</h3>
         <dl>
           <dt>Role</dt><dd>Design, direction and review. I wrote the design rules and the contract for each page; Claude and Codex agents wrote most of the code against them.</dd>
-          <dt>Front end</dt><dd>Plain HTML, CSS and ES modules with deck.gl for the map. No framework and no build step.</dd>
-          <dt>Data</dt><dd>A Python pipeline that turns the dispatch records into static files on a schedule.</dd>
+          <dt>Front end</dt><dd>Plain HTML, CSS and ES modules with deck.gl for the maps. No framework and no build step.</dd>
+          <dt>Data</dt><dd>A Python pipeline that turns the dispatch records into static files each night.</dd>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="piece" id="six-years">
+    <header>
+      <h2>Six Years of Service</h2>
+      <span class="label">Motion · 2026 · Interior Climate Solutions</span>
+    </header>
+    <p class="lede">A two and a half minute animated history of the company, made for its sixth birthday and sent to everyone who works there.</p>
+
+    <div class="viewer">
+      <video controls preload="metadata" playsinline poster="assets/video/poster.webp" aria-label="Six Years of Service, an animated company timeline, 2 minutes 34 seconds, with music">
+        <source src="assets/video/six-years.mp4" type="video/mp4">
+      </video>
+      <p class="cap"><b>Two and a half minutes, with sound.</b> A truck drives a timeline from 2020 to today while the counts, the map and the team grow behind it.</p>
+    </div>
+
+    <div class="notes">
+      <div>
+        <h3 class="label">How it works</h3>
+        <ul>
+          <li>The whole film is one HTML file. Every frame is a pure function of time, so any moment can be drawn alone and always comes out the same.</li>
+          <li>One block at the top holds every date, line, number and photo. When the real early history and photographs came in the day before it went out, the film changed by editing that block.</li>
+          <li>The score is synthesized in NumPy from a bar map, so the cuts land on beats by arithmetic.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="label">Why it exists</h3>
+        <p>The ask was a thank-you note with some numbers in it. The numbers were better as a story: the first customers, the first truck, the first job out of state, then every call counted since March 2023.</p>
+        <p>The closing shot turns the company logo into a ring emblem I drew for it.</p>
+      </div>
+      <div>
+        <h3 class="label">How it was made</h3>
+        <dl>
+          <dt>Role</dt><dd>Concept, script, design and direction, built with Claude.</dd>
+          <dt>Render</dt><dd>Stepped frame by frame through headless Chromium, encoded with ffmpeg.</dd>
+          <dt>Time</dt><dd>Three days from the ask to the send.</dd>
+          <dt>Audience</dt><dd>239 people, by email, the day after the birthday.</dd>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="piece" id="fieldcraft">
+    <header>
+      <h2>Fieldcraft</h2>
+      <span class="label">3D training lab · 2026 · My own startup</span>
+    </header>
+    <p class="lede">Trades training where you learn a repair by doing it. A working pilot built around equipment you can open, probe and fix in 3D, with every action checked and recorded toward a result you can certify.</p>
+
+    <div class="viewer" data-viewer>
+      <a class="stage" style="aspect-ratio: 1207 / 920" href="assets/fieldcraft/rooftop.webp" target="_blank" rel="noopener" aria-label="Open this view at full size">
+        <img class="on" src="assets/fieldcraft/rooftop.webp" alt="A 3D rooftop air unit with its panels open and multimeter leads on two relay terminals, beside a console showing a resistance reading.">
+      </a>
+      <div class="tabs" role="group" aria-label="Views of Fieldcraft">
+        <button type="button" aria-pressed="true" data-src="assets/fieldcraft/rooftop.webp" data-bg="#102725"
+          data-alt="A 3D rooftop air unit with its panels open and multimeter leads on two relay terminals, beside a console showing a resistance reading."
+          data-cap="<b>Rooftop lab.</b> Open the panels, place the red and black leads, capture the reading. The console on the right is the meter; the belt below holds the six tools.">Rooftop lab</button>
+        <button type="button" aria-pressed="false" data-src="assets/fieldcraft/air-handler.webp" data-bg="#102725"
+          data-alt="A second 3D lab: an indoor air handler in a mechanical room with labeled components and a meter reading."
+          data-cap="<b>Air handler lab.</b> A second unit in its own mechanical room. Each of the eight labs has its own faults to find.">Air handler lab</button>
+        <button type="button" aria-pressed="false" data-src="assets/fieldcraft/home.webp" data-bg="#f5f6f1"
+          data-alt="The Fieldcraft home page with the headline Find the fault. Prove the repair. and an isometric drawing of a rooftop unit."
+          data-cap="<b>Home.</b> Outside the lab the product turns light and editorial. One job runs through it: intake, diagnose, verify.">Home</button>
+        <button type="button" aria-pressed="false" data-src="assets/fieldcraft/course.webp" data-bg="#f5f6f1"
+          data-alt="A course page with a dark green header, an ordered list of lessons with scores, and a panel listing what the learner will practice."
+          data-cap="<b>Course.</b> A forest header, an ordered lesson list and what you will practice. Progress is stated plainly, with no decorative badges.">Course</button>
+      </div>
+      <p class="cap" aria-live="polite"><b>Rooftop lab.</b> Open the panels, place the red and black leads, capture the reading. The console on the right is the meter; the belt below holds the six tools.</p>
+    </div>
+
+    <div class="notes">
+      <div>
+        <h3 class="label">The rules it is built to</h3>
+        <ul>
+          <li>A refined editorial feel outside the lab; an immersive dark equipment workspace inside it.</li>
+          <li>No stock dashboard charts or fake metrics.</li>
+          <li>A citron tool belt and restrained component highlights make the next interaction legible.</li>
+          <li>Name a failed assessment directly; encouragement must not obscure the result.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="label">What a learner does</h3>
+        <p>Orbit the unit, open its hinged panels, turn screws, unplug wire ends, swap parts, and place meter leads in voltage or resistance mode. A circuit diagram is linked to the 3D unit, so tracing one traces the other.</p>
+        <p>The server checks every action. The renderer cannot award points.</p>
+      </div>
+      <div>
+        <h3 class="label">How it was made</h3>
+        <dl>
+          <dt>Role</dt><dd>Product, design and direction. Built with Codex.</dd>
+          <dt>Stack</dt><dd>React, Three.js and Tailwind on Vite, built to run as a Cloudflare Worker.</dd>
+          <dt>So far</dt><dd>Eight equipment labs, 24 fault variants and 828 lessons across 12 tracks. The content is awaiting expert review.</dd>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="piece" id="path">
+    <header>
+      <h2>Path</h2>
+      <span class="label">Dispatch and field console · 2026 · Interior Climate Solutions</span>
+    </header>
+    <p class="lede">The daily console for service managers, operations and executives: what to clear next, where every technician is, and how the month is pacing.</p>
+
+    <div class="viewer" data-viewer>
+      <a class="stage" style="aspect-ratio: 1440 / 1000" href="assets/path/home.webp" target="_blank" rel="noopener" aria-label="Open this view at full size">
+        <img class="on" src="assets/path/home.webp" alt="A service manager's home screen: a list of calls to clear on the left and a board of technicians and stops on the right.">
+      </a>
+      <div class="tabs" role="group" aria-label="Views of Path">
+        <button type="button" aria-pressed="true" data-src="assets/path/home.webp"
+          data-alt="A service manager's home screen: a list of calls to clear on the left and a board of technicians and stops on the right."
+          data-cap="<b>Home.</b> The page opens on what to clear next, oldest first, beside today's board and what each technician is doing now.">Home</button>
+        <button type="button" aria-pressed="false" data-src="assets/path/map.webp"
+          data-alt="The board switched to a map, with numbered stops, truck positions and an open key explaining each mark."
+          data-cap="<b>Map.</b> Stops in visit order, trucks and phone taps, with a key that says what every mark means.">Map</button>
+        <button type="button" aria-pressed="false" data-src="assets/path/search.webp"
+          data-alt="A search palette open over the page, listing matching calls with their age and amount."
+          data-cap="<b>Search.</b> Ctrl K finds any call, invoice or quote and shows its state without leaving the page.">Search</button>
+        <button type="button" aria-pressed="false" data-src="assets/path/dispatch.webp"
+          data-alt="A drawer open on the right showing one dispatch: technician, times, purchase order and the latest note."
+          data-cap="<b>Dispatch.</b> One call in a drawer: the technician, the times, the purchase order and the latest note from the field.">Dispatch</button>
+        <button type="button" aria-pressed="false" data-src="assets/path/operations.webp"
+          data-alt="An operations view with one row per service manager, showing late stops, callbacks and work waiting to bill."
+          data-cap="<b>Operations.</b> One row per service manager: late stops, callbacks and what is waiting to bill. Read-only from here.">Operations</button>
+        <button type="button" aria-pressed="false" data-src="assets/path/executive.webp"
+          data-alt="An executive view with pace-to-goal gauges for each region and a breakdown of money waiting to invoice."
+          data-cap="<b>Executive.</b> Pace to goal by region, and where money is stuck. Same data, one level up.">Executive</button>
+      </div>
+      <p class="cap" aria-live="polite"><b>Home.</b> The page opens on what to clear next, oldest first, beside today's board and what each technician is doing now.</p>
+    </div>
+
+    <div class="notes">
+      <div>
+        <h3 class="label">The rules it is built to</h3>
+        <ul>
+          <li>Mono tabular figures for every number, ID and time. The numbers carry the meaning.</li>
+          <li>Status is a hue family plus an icon, never color alone.</li>
+          <li>A dark grey canvas, not near-black, with visible 1px borders, so the structure is seen and not only felt.</li>
+          <li>The accent is rationed to focus, the active item, the primary action and the live cursor.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="label">Why it exists</h3>
+        <p>I ran dispatch at this company before I built for it. A service manager's morning is a list: invoice what is done, chase what is quoted, see who is where.</p>
+        <p>Path puts that list first, then gives operations and executives the same day at their own altitude.</p>
+      </div>
+      <div>
+        <h3 class="label">How it was made</h3>
+        <dl>
+          <dt>Role</dt><dd>Design, direction and review. I wrote the design system and the contracts; Claude and Codex agents wrote most of the code against them.</dd>
+          <dt>Stack</dt><dd>Next.js, React, Tailwind and MapLibre, typed end to end.</dd>
+          <dt>Data</dt><dd>Reads a mirror of the service system. Anything it writes goes through a typed, logged path on a person's command.</dd>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="piece" id="stores">
+    <header>
+      <h2>Store models</h2>
+      <span class="label">3D site surveys · 2026 · Interior Climate Solutions</span>
+    </header>
+    <p class="lede">Interactive 3D models of a customer's stores, generated from our HVAC site surveys and published to the customer's own portal. Thirteen Pep Boys stores so far, built to hold hundreds.</p>
+
+    <div class="viewer" data-viewer>
+      <a class="stage" style="aspect-ratio: 16 / 10; background: #ffffff" href="assets/stores/roof.webp" target="_blank" rel="noopener" aria-label="Open this view at full size">
+        <img class="on" src="assets/stores/roof.webp" alt="A 3D model of a store with its roof lifted above the walls, rooftop units floating with it and curved duct runs dropping to the rooms below.">
+      </a>
+      <div class="tabs" role="group" aria-label="Views of the store models">
+        <button type="button" aria-pressed="true" data-src="assets/stores/roof.webp" data-bg="#ffffff"
+          data-alt="A 3D model of a store with its roof lifted above the walls, rooftop units floating with it and curved duct runs dropping to the rooms below."
+          data-cap="<b>Lift roof.</b> The roof slab and every rooftop unit rise together, so the run from each unit down to its diffusers is visible.">Lift roof</button>
+        <button type="button" aria-pressed="false" data-src="assets/stores/store.webp" data-bg="#ffffff"
+          data-alt="The same store with the roof down: an aerial photo as the ground, see-through walls and color-coded equipment with labels."
+          data-cap="<b>A store.</b> The aerial photo is the ground, the walls are see-through, and each unit shares one color with everything it feeds.">A store</button>
+        <button type="button" aria-pressed="false" data-src="assets/stores/unit.webp" data-bg="#ffffff"
+          data-alt="One rooftop unit selected, with lines fanning out to its labeled supply diffusers and return grilles, and its make and model in the side panel."
+          data-cap="<b>One unit.</b> Select a rooftop unit and the camera frames it with its 18 linked diffusers, grilles, thermostat and drain.">One unit</button>
+        <button type="button" aria-pressed="false" data-src="assets/stores/above.webp" data-bg="#ffffff"
+          data-alt="The store seen from almost directly above, showing how each unit's ducts fan out across the floor plan."
+          data-cap="<b>From above.</b> Orbit to the plan view and the model reads as a duct map of the building.">From above</button>
+      </div>
+      <p class="cap" aria-live="polite"><b>Lift roof.</b> The roof slab and every rooftop unit rise together, so the run from each unit down to its diffusers is visible.</p>
+    </div>
+
+    <div class="notes">
+      <div>
+        <h3 class="label">The rules it is built to</h3>
+        <ul>
+          <li>One colour per unit, used for the unit and every item it links to.</li>
+          <li>The aerial carries a wash in the canvas colour, so the equipment reads before the photo.</li>
+          <li>Lift roof raises the roof slab and every roof-level unit and item together.</li>
+          <li>For a customer view, say nothing about accuracy or missing data; show what is there.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="label">Where it comes from</h3>
+        <p>On a survey, a technician taps each piece of equipment and sketches the walls on an aerial photo. A nightly job turns each survey into one small model file and one image.</p>
+        <p>The customer opens their store in the portal and sees what is on the roof and what it feeds.</p>
+      </div>
+      <div>
+        <h3 class="label">How it was made</h3>
+        <dl>
+          <dt>Role</dt><dd>Design, direction and review, built with Claude against a written contract.</dd>
+          <dt>Stack</dt><dd>three.js. In the portal the 3D code loads only when someone opens the model.</dd>
+          <dt>Scale</dt><dd>Each model is at most 64 KB. A test rebuild of 800 stores publishes in under a minute.</dd>
+          <dt>Shown</dt><dd>The standalone viewer the portal version is built from.</dd>
         </dl>
       </div>
     </div>
@@ -214,12 +424,13 @@ document.querySelectorAll('[data-viewer]').forEach(function (v) {
   function show(b) {
     var src = b.dataset.src, img = imgs[src];
     if (!img) {
-      img = new Image(); img.src = src; img.alt = b.dataset.alt; img.width = 1886; img.height = 1156;
+      img = new Image(); img.src = src; img.alt = b.dataset.alt;
       stage.appendChild(img); imgs[src] = img;
     }
     var on = function () { Object.keys(imgs).forEach(function (k) { imgs[k].classList.toggle('on', k === src); }); };
     if (img.complete) on(); else img.addEventListener('load', on, { once: true });
     stage.href = src;
+    if (b.dataset.bg) stage.style.background = b.dataset.bg;
     cap.innerHTML = b.dataset.cap;
     buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
   }
